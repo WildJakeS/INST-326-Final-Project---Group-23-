@@ -7,10 +7,11 @@ as close to 21 as possible without exceeding it. Aces can be counted
 as 1 or 11 based on the total hand value.
 
 Features:
-- *
+Game can be replayed for multiple rounds
 
 Usage:
-- *
+Running the code will start the game; users must follow and decide to either hit or stand. 
+The game will automatically handle the dealer's actions and decide the winner
 
 Future Enhancements:
 - *
@@ -81,49 +82,55 @@ def blackjack():
 
     print("Welcome to Blackjack!")
     
-    # Initialize Deck and Shuffle
-    deck = create_deck()
-    random.shuffle(deck)
-    
-    # Player and Dealer Hands
-    player_hand = [deal_card(deck), deal_card(deck)]
-    dealer_hand = [deal_card(deck), deal_card(deck)]
-    
-    # Gameloop
     while True:
-        # Displays Hands
-        print("\nYour Hand:", player_hand, "-> Score:", calculate_score(player_hand))
-        print("Dealer's Hand: [", dealer_hand[0], ", ??? ]")
+        # Initialize Deck and Shuffle
+        deck = create_deck()
+        random.shuffle(deck)
         
-        # Player's turn
-        action = input("Do you want to 'hit' or 'stand'? ").lower()
-        if action == "hit":
-            player_hand.append(deal_card(deck))
-            if calculate_score(player_hand) > 21:
-                print("\nYour Hand:", player_hand, "-> Score:", calculate_score(player_hand))
-                print("You busted! Dealer wins.")
+        # Player and Dealer Hands
+        player_hand = [deal_card(deck), deal_card(deck)]
+        dealer_hand = [deal_card(deck), deal_card(deck)]
+        
+        # Gameloop
+        while True:
+            # Displays Hands
+            print("\nYour Hand:", player_hand, "-> Score:", calculate_score(player_hand))
+            print("Dealer's Hand: [", dealer_hand[0], ", ??? ]")
+            
+            # Player's turn
+            action = input("Do you want to 'hit' or 'stand'? ").lower()
+            if action == "hit":
+                player_hand.append(deal_card(deck))
+                if calculate_score(player_hand) > 21:
+                    print("\nYour Hand:", player_hand, "-> Score:", calculate_score(player_hand))
+                    print("You busted! Dealer wins.")
+                    break
+            elif action == "stand":
                 break
-        elif action == "stand":
-            break
-        else:
-            print("Invalid input! Please type 'hit' or 'stand'.")
-    
-    # Dealer's Turn
-    if calculate_score(player_hand) <= 21:
-        print("\nDealer's Turn...")
-        while calculate_score(dealer_hand) < 17:
-            dealer_hand.append(deal_card(deck))
-        print("Dealer's Hand:", dealer_hand, "-> Score:", calculate_score(dealer_hand))
+            else:
+                print("Invalid input! Please type 'hit' or 'stand'.")
         
-        # Choose winner
-        player_score = calculate_score(player_hand)
-        dealer_score = calculate_score(dealer_hand)
-        if dealer_score > 21 or player_score > dealer_score:
-            print("You win!")
-        elif player_score < dealer_score:
-            print("Dealer wins!")
-        else:
-            print("It's a tie!")
+        # Dealer's Turn
+        if calculate_score(player_hand) <= 21:
+            print("\nDealer's Turn...")
+            while calculate_score(dealer_hand) < 17:
+                dealer_hand.append(deal_card(deck))
+            print("Dealer's Hand:", dealer_hand, "-> Score:", calculate_score(dealer_hand))
+            
+            # Choose winner
+            player_score = calculate_score(player_hand)
+            dealer_score = calculate_score(dealer_hand)
+            if dealer_score > 21 or player_score > dealer_score:
+                print("You win!")
+            elif player_score < dealer_score:
+                print("Dealer wins!")
+            else:
+                print("It's a tie!")
+                
+        #Play again
+        play_again =  input("Would you like to play again? (y/n) ").lower()
+        if play_again == "n":
+            break 
 
 if __name__ == "__main__":
     """Entry point of the program. Starts the Blackjack game."""
