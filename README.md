@@ -1,7 +1,7 @@
 # INST-326-Final-Project---Group-23- 
 
 ## Overview  
-This program will implement a simple text based Blackjack game named ``BEWILDERING BLACKJACK``. Players will play against the dealer in a unique game of Blackjack where players will need to reach a score of 42 to win. To further increase the challenge, unique cards will be added to enhance the game such as the Joker card.
+This program will implement a simple text based Blackjack game named ``BEWILDERING BLACKJACK``. Players will play against the dealer in a unique game of Blackjack where players will need to reach a score of 21 to win. To further increase the challenge, unique cards will be added to enhance the game such as the Joker card.
 
 Through this project, we hope to create a user-friendly and engaging game that demonstrates our  problem-solving ability, data structure and object-oriented programming skills and growth.
 
@@ -16,26 +16,28 @@ Through this project, we hope to create a user-friendly and engaging game that d
 
 ## Usage
 ### Option 1: Clone Repository
-
-git `clone` https://github.com/WildJakeS/INST-326-Final-Project---Group-23-.git 
-`cd` INST-326-Final-Project---Group-23-
-
+```bash
+git clone https://github.com/WildJakeS/INST-326-Final-Project---Group-23-.git 
+cd INST-326-Final-Project---Group-23-
+```
 ### Option 2: Copy/ Downdload the code
 Copy or download the code from the cards.py file in the ``INST-326-Final-Project---Group-23-`` repository
 
 ## Running the code  
+```bash
 python cards.py  
+```
 
-Running this code will start the game.The game will handle the dealer's actions and determine the winner.
+Running this code will start the game. The game will handle the dealer's actions and determine the winner.
 
 ## Playing the Game  
-- Goal: get your hand as close to 21 without exceeeding it
+- Goal: To win the game, you must get your hand as close to 21 without exceeeding it.
 - Commands:  
-hit: Draw another card  
-stand: End your turn
+  - hit: Draw another card  
+  - stand: End your turn
 
 ## Gameplay Example 
-Run this code in your terminal
+Run this code in your terminal to start the game
 ```bash 
 python cards.py
 ```
