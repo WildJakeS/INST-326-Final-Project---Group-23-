@@ -23,7 +23,7 @@ git `clone` https://github.com/WildJakeS/INST-326-Final-Project---Group-23-.git
 ### Option 2: Copy/ Downdload the code
 Copy or download the code from the cards.py file in the ``INST-326-Final-Project---Group-23-`` repository
 
-### Running the code 
+## Running the code  
 python cards.py  
 
 Running this code will start the game.The game will handle the dealer's actions and determine the winner.
@@ -34,3 +34,34 @@ Running this code will start the game.The game will handle the dealer's actions 
 hit: Draw another card  
 stand: End your turn
 
+## Gameplay Example 
+Run this code in your terminal
+```bash 
+python cards.py
+```
+Example of how they game will play
+```
+Welcome to Blackjack!  
+Enter the number of players: 1  
+Enter Player 1's name: Player 1  
+
+Player 1's Turn:  
+Player 1's Hand: ['K of Spades', '2 of Diamonds'] -> Score: 12  
+Do you want to 'hit' or 'stand'? hit  
+Player 1 busted!  
+  
+Dealer's Turn...  
+Dealer's Hand: ['8 of Clubs', '8 of Diamonds', '2 of Hearts'] -> Score: 18  
+Player 1 wins!  
+Would you like to play again? (y/n) y  
+
+Player 1's Turn:  
+Player 1's Hand: ['Q of Clubs', '3 of Clubs'] -> Score: 13  
+Do you want to 'hit' or 'stand'? hit  
+Player 1's Hand: ['Q of Clubs', '3 of Clubs', '8 of Hearts'] -> Score: 21  
+Do you want to 'hit' or 'stand'? stand  
+
+Dealer's Turn...  
+Dealer's Hand: ['A of Clubs', '3 of Hearts', '10 of Hearts', '9 of Hearts'] -> Score: 23  
+Player 1 wins!  
+Would you like to play again? (y/n) n 
